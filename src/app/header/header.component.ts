@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, EventEmitter, Output } from "@angular/core";
 
 
 
@@ -8,5 +8,16 @@ import { Component } from "@angular/core";
 })
 export class HeaderComponent
 {
+ @Output() pageChoosen: EventEmitter<String> = new EventEmitter();
+
+onRecipeClicked(): void{
+this.pageChoosen.emit('Recipe');
+}
+
+onShoppingClicked(): void{
+    this.pageChoosen.emit('Shopping');
+}
+
+
 
 }

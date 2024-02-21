@@ -1,10 +1,16 @@
 
-<app-header></app-header>
+<app-header (pageChoosen)="OnHeaderClicked($event)"></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-recipes></app-recipes>
-      <app-shopping-list></app-shopping-list>
+      <!-- <app-recipes></app-recipes>
+      <app-shopping-list></app-shopping-list> -->
+      <div *ngIf="selectedPage=== 'Recipe'; then thenBlock else elseBlock"></div>
+
     </div>
   </div>
 </div>
+
+
+<ng-template #thenBlock><app-recipes></app-recipes></ng-template>
+<ng-template #elseBlock><app-shopping-list></app-shopping-list></ng-template>
