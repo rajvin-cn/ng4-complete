@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Recipe } from './recipes/recipe.model';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +9,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ng4-complete';
   selectedPage:string ;
+ 
 
   OnHeaderClicked(page:string):void {
   this.selectedPage = page;
   }
+
+
+  
 }
